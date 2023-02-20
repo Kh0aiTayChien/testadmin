@@ -4,6 +4,8 @@
 /public/js
 /public/css
 /storage/*.key
+/vendor/composer
+/vendor/livewire
 .env
 .env.backup
 .phpunit.result.cache
