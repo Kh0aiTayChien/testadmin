@@ -13,7 +13,7 @@
                     <h4 class="font-size-medium"> DANH MỤC NỘI DUNG</h4>
                     <div class="mt-3"> Cẩm nang tri thức</div>
                     <div class="mt-3"> Sự kiện doanh nghiệp</div>
-                    <div class="mt-3"> Tuyển dụng </div>
+                    <div class="mt-3"> Tuyển dụng</div>
                 </div>
             </div>
             <div>
@@ -26,21 +26,21 @@
                 @foreach($news as $new)
                     <div class="col-6">
                         <div class="card border-0" style="width: 100%;">
-                            <img src="{{asset($new->image)}}" alt="banner" class="card-img-top" alt="">
-                            <div class="card-body">
+                            <div class="container">
+                                <img src="{{asset($new->image)}}" alt="avatar"
+                                     class="card-img-top img-avatar img-fluid" style="height: 15rem">
+                            </div>
+                            <div class="card-body" style="height: 15rem">
                                 <p class="card-text">{{$new->created_at}}</p>
                                 <h5 class="card-title">{{$new->title}}</h5>
-{{--                                <p class="card-text">{!! $new->content !!}} </p>--}}
-{{--                                <p class="card-text">{{ Str::limit($new->content, 100, '...') }} </p>--}}
-{{--                                <p class="card-text">{{ strip_tags(Str::limit($new->content, 100, '...'),'<p>') }} </p>--}}
                                 <p class="card-text">{!! Str::limit(strip_tags($new->content, '<p>'),100) !!}
                             </div>
                         </div>
                     </div>
                 @endforeach
-                    <div class="col-12 text-center">
-                        {{ $news->links() }}
-                    </div>
+                <div class="col-12 text-center">
+                    {{ $news->links() }}
+                </div>
             </div>
         </div>
     </div>
